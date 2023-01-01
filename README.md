@@ -11,7 +11,7 @@ MinePaintのLICENSEは、[***GNU General Public License***](https://github.com/b
 1. そのため、MinePaintに関する全ての事柄を、*©Mojang Sutudios*社 に問い合わせないでください。
 
 ### - Info
-* ゲームが正常に動かないと思われる場合は、[***Issues***](https://github.com/bambooNoko/MinePaint/issues) へ飛び、それに関連するタグをつけて問題を報告してください。
+* ゲームが正常に動かないと思われる場合は、[***Issues***](https://github.com/Apedy/MinePaint/issues) へ飛び、それに関連するタグをつけて問題を報告してください。
 
 # About Games
 ### - 勝利条件
