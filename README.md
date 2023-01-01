@@ -4,7 +4,7 @@
 </p>
 
 # Introduction.
-MinePaintのLICENSEは、[***GNU General Public License***](https://github.com/bambooNoko/MinePaint/blob/info/LICENSE) を使用しています。
+MinePaintのLICENSEは、[***GNU General Public License***](https://github.com/Apedy/MinePaint/blob/info/LICENSE) を使用しています。
 
 ### ! Notes
 1. MinePaintのマップ及びアドオンは、Minecraft非公式なものであり、これらの制作に *©Mojang Sutudios*社 は関与していません。
