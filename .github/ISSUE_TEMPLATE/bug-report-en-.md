@@ -2,8 +2,8 @@
 name: Bug report(EN)
 about: There is a problem with the '_____'.
 title: ''
-labels: ''
-assignees: bambooNoko
+labels: 'Problem: bug'
+assignees: ''
 
 ---
 

@@ -2,8 +2,8 @@
 name: Feature request(EN)
 about: I would like to see a '_____' feature added.
 title: ''
-labels: 新機能 / New feature
-assignees: bambooNoko
+labels: 'Feedback: new feature'
+assignees: ''
 
 ---
 

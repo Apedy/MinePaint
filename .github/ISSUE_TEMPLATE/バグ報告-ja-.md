@@ -2,8 +2,8 @@
 name: バグ報告(JA)
 about: "○○に問題があります。"
 title: ''
-labels: ''
-assignees: bambooNoko
+labels: 'Problem: bug'
+assignees: ''
 
 ---
 

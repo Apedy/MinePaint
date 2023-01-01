@@ -2,8 +2,8 @@
 name: 機能リクエスト(JA)
 about: "○○の機能を追加してほしい。"
 title: ''
-labels: 新機能 / New feature
-assignees: bambooNoko
+labels: 'Problem: bug'
+assignees: ''
 
 ---
 
