@@ -1,10 +1,10 @@
 {
   "format_version": 2,
   "header": {
-    "name": "MinePaint-B v0.2.3",
+    "name": "MinePaint-B v0.1.0",
 		"description": "MinePaintに関するエンジンが組み込まれたパックです。",
 		"uuid": "75bea368-acf8-4909-b2a0-d3ad7640d848",
-		"version": [0, 2, 3],
+		"version": [0, 1, 0],
 		"min_engine_version": [1, 19, 50]
 	},
 	"modules": [
@@ -12,7 +12,7 @@
 			"description": "MinePaintのメインエンジンです。",
 			"type": "script",
 			"uuid": "b92bb208-1b3a-479b-b88f-3e6d94b33283",
-			"version": [0, 2, 3],
+			"version": [0, 1, 0],
 			"language": "javascript",
 			"entry": "scripts/server/script.js"
 		}
@@ -29,7 +29,7 @@
 	],
 	"metadata": {
 		"authors": ["Bamboo_noko"],
-		"license": "CC BY-ND 4.0",
-		"url": "https://serori.memo.wiki/"
+		"license": "GNU General Public License",
+		"url": "https://github.com/Apedy/MinePaint"
 	}
 }
