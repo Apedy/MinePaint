@@ -3,7 +3,7 @@ name: Bug report(EN)
 about: There is a problem with the '_____'.
 title: ''
 labels: 'Problem: bug'
-assignees: ''
+assignees: Apedy
 
 ---
 
