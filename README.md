@@ -49,5 +49,5 @@ MinePaintのLICENSEは、[***GNU General Public License***](https://github.com/A
 ### APIの使用
 
 ### Ore-uiへの移行
-　恐らく現在でMinecraftを利用するユーザーのインターフェイスを変える場合は、JSON-UIを用いて変更を行うことでしょう。しかしこれらは非常に扱いづらく、また、標準的ではありません。そのため、Mojang Studiosは、新たにOre-uiと呼ばれるReactで構築されたゲームUIを管理するための仕組みを提供しようとしています。Minecraftでは、数年以内にJSON-UIが廃止されOre-uiへ移行し、今後さらにスクリプト要素が増える予定です。そのためMinePaintでは、JSON-UIでの変更は最小限に行われ、Ore-uiがuiの主流になった際に対応が可能なよう調整しています。
+　恐らく現在でMinecraftを利用するユーザーのインターフェイスを変える場合は、JSON-UIを用いて変更を行うことでしょう。しかしこれらは非常に扱いづらく、また、標準的ではありません。そのため、Mojang Studiosは、新たにOre-uiと呼ばれるReactで構築されたゲームUIを管理するための仕組みを提供しようとしています。Minecraftでは、数年以内にJSON-UIが廃止されOre-uiへ移行し、今後さらにスクリプト要素が増える予定です。そのためMinePaintでは、JSON-UIでの変更は最小限に行われ、Ore-uiがuiの主流になった際に対応が可能なよう調整しています。<br>
 　Ore-uiでは、Reactというui構築のためのJavaScriptライブラリで構築されたUIを管理するためのReact-Facetなどが提供されており、これらのパフォーマンスはゲームに最適でかつスマートで、創作性に優れています。
