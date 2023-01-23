@@ -4,12 +4,10 @@ import * as ui from './display';
 import './support';
 import {
 	config,
-	system,
-	setting,
-	game,
 	dimension,
 
 	//? Data
+	worldData,
 	playerData,
 	reportData,
 	oreData,
@@ -45,17 +43,17 @@ mc.world.events.beforeItemUse.subscribe(eventData => {
 	const {	source } = eventData;
 
 	if (eventData.item.typeId === "minecraft:book") {
-		if (system.startUp) {
-			if (system.game) source.hasTag(config.opTag) ? ui.gameResetPanel() : null;
-			else source.isSneaking && source.hasTag(config.opTag) ? ui.systemPanel(source) : ui.mainPanel(source);
+		if (worldData.system.startUp) {
+			if (worldData.system.game) source.hasTag(config.opTag) ? ui.System.gameResetPanel() : null;
+			else source.isSneaking && source.hasTag(config.opTag) ? ui.System.systemPanel(source) : ui.Main.mainPanel(source);
 		}
 		else if (source.hasTag(config.opTag)) {
 			try {
-				ui.systemStartupPanelData(source);
+				ui.System.startupPanel(source);
 			}
 			catch (e) {
-				system.startUp = false;
-				runCommands(source, `say error`);
+				worldData.system.startUp = false;
+				runCommands(source, `say §l§e(§cERROR§e) §fcode:#FFFF`);
 				ui.errorPanel(source, `${lang.system.message.startUp.again}\n${e}`);
 			}
 		}
@@ -87,7 +85,7 @@ mc.world.events.blockBreak.subscribe(eventData => {
 		"minecraft:coal_ore": { item: 1, time: 20 }
 	};
 
-	if (system.game && Object.keys(blockData).includes(block.id)) {
+	if (worldData.system.game && Object.keys(blockData).includes(block.id)) {
 		oreData.manager(new ODMhs().add, block.location, new ODStack(block.id, blockData[block.id].time));
 
 		if (/^minecraft:deepslate/i.test(block.id)) runCommands(dimension, `setblock ${block.location} cobbled_deepslate`);
@@ -100,7 +98,7 @@ mc.world.events.blockBreak.subscribe(eventData => {
 			case "red": runCommands(player, `give @s cobblestone ${blockData[block.id].item}`); break;
 		}
 	}
-	else if (system.game && ["minecraft:cobblestone", "minecraft:cobbled_deepslate"].includes(block.id)) return block.set();
+	else if (worldData.system.game && ["minecraft:cobblestone", "minecraft:cobbled_deepslate"].includes(block.id)) return block.set();
 });
 
 
@@ -108,15 +106,20 @@ mc.world.events.blockBreak.subscribe(eventData => {
 mc.system.run(function tick() {
 	mc.system.run(tick);
 
-	runCommands(dimension, `effect @a night_vision 11 0 true`, `effect @a saturation 1 255 true`);
+	runCommands(dimension,
+		`effect @a night_vision 11 0 true`,
+		`effect @a saturation 1 255 true`,
+		`tp @a[y=-65,dy=-100] 0 -60 0 0 0`
+	);
 
-	if (system.game) {
+	if (worldData.system.game) {
 		//? game event
-		game.timer--;
+		worldData.game.timer--;
 
-		runCommands(dimension, `title @a actionbar "${Math.floor(game.timer / 20 * Math.pow(10, 1) ) / Math.pow(10, 1)}"`);
-
-		runCommands(dimension, `function game/system/${game.getMap()}`);
+		runCommands(dimension,
+			`title @a actionbar "${Math.floor(worldData.game.timer / 20 * Math.pow(10, 1) ) / Math.pow(10, 1)}"`,
+			`function game/system/${worldData.game.getMap()}`
+		);
 
 		/**
 		 * ^: (_ [to] _s), meaning [to]. / _ is the seconds.
@@ -124,22 +127,22 @@ mc.system.run(function tick() {
 		 * ..: Seconds to end.
 		 */
 		//? +30^+6s^
-		if (game.timer - 120 >= setting.timer * 20 && game.timer % 20 === 0) runCommands(dimension, `playsound note.hat @a`);
+		if (worldData.game.timer - 120 >= worldData.setting.timer * 20 && worldData.game.timer % 20 === 0) runCommands(dimension, `playsound note.hat @a`);
 		//? +5^+1s
-		else if (game.timer > setting.timer * 20 && game.timer % 20 === 0) runCommands(dimension, `title @a title §e${game.timer / 20 - setting.timer}`, `playsound note.harp @a`);
+		else if (worldData.game.timer > worldData.setting.timer * 20 && worldData.game.timer % 20 === 0) runCommands(dimension, `title @a title §e${worldData.game.timer / 20 - worldData.setting.timer}`, `playsound note.harp @a`);
 		//? +0s
-		else if (game.timer === setting.timer * 20 && game.timer % 20 === 0) runCommands(dimension, `function game/process/start_${game.getMap()}`);
+		else if (worldData.game.timer === worldData.setting.timer * 20 && worldData.game.timer % 20 === 0) runCommands(dimension, `function game/process/start_${worldData.game.getMap()}`);
 
 		//? ..30s
-		if (game.timer === 600) runCommands(dimension, `tellraw @a {"rawtext": [{"translate": "${lang.system.message.game.time[30]}"}]}`, `playsound random.toast @a`);
+		if (worldData.game.timer === 600) runCommands(dimension, `tellraw @a {"rawtext": [{"translate": "${lang.system.message.game.time[30]}"}]}`, `playsound random.toast @a`);
 		//? ..10s
-		if (game.timer === 200) runCommands(dimension, `tellraw @a {"rawtext": [{"translate": "${lang.system.message.game.time[10]}"}]}`, `playsound random.toast @a`);
+		if (worldData.game.timer === 200) runCommands(dimension, `tellraw @a {"rawtext": [{"translate": "${lang.system.message.game.time[10]}"}]}`, `playsound random.toast @a`);
 		//? ..10^5s
-		if (game.timer < 200 && game.timer > 100 && game.timer % 10 === 0) runCommands(dimension, `playsound note.hat @a`);
+		if (worldData.game.timer < 200 && worldData.game.timer > 100 && worldData.game.timer % 10 === 0) runCommands(dimension, `playsound note.hat @a`);
 		//? ..5^0s
-		if (game.timer <= 100 && game.timer > 0 && game.timer % 5 === 0) runCommands(dimension, `playsound note.hat @a`);
+		if (worldData.game.timer <= 100 && worldData.game.timer > 0 && worldData.game.timer % 5 === 0) runCommands(dimension, `playsound note.hat @a`);
 		//? ..0s
-		if (game.timer === 0) {
+		if (worldData.game.timer === 0) {
 			resetGame();
 		}
 
@@ -161,6 +164,6 @@ mc.system.run(function tick() {
 mc.world.events.playerJoin.subscribe(eventData => {
 	const {player} = eventData;
 
-	if (system.startUp) loginProcess(player);
+	if (worldData.system.startUp) loginProcess(player);
 	else return;
 });
