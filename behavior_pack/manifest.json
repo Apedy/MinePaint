@@ -1,18 +1,24 @@
 {
-  "format_version": 2,
-  "header": {
-    "name": "MinePaint-B v0.1.0",
-		"description": "MinePaintに関するエンジンが組み込まれたパックです。",
+	"format_version": 2,
+	"header": {
+		"name": "MinePaint-B",
+		"description": "MinePaintに関するエンジンやデータが組み込まれたパックです。",
 		"uuid": "75bea368-acf8-4909-b2a0-d3ad7640d848",
-		"version": [0, 1, 0],
+		"version": [0, 1, 1],
 		"min_engine_version": [1, 19, 50]
 	},
 	"modules": [
 		{
+			"description": "MinePaintの基礎データです。",
+			"type": "data",
+			"uuid": "8b17a04c-a7a7-4a45-ae12-79e2d0f998fd",
+			"version": [0, 1, 0]
+		},
+		{
 			"description": "MinePaintのメインエンジンです。",
 			"type": "script",
 			"uuid": "b92bb208-1b3a-479b-b88f-3e6d94b33283",
-			"version": [0, 1, 0],
+			"version": [0, 1, 1],
 			"language": "javascript",
 			"entry": "scripts/server/script.js"
 		}

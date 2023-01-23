@@ -36,3 +36,18 @@ MinePaintのLICENSEは、[***GNU General Public License***](https://github.com/A
 |Gold|12|200|
 |Iron|5|100|
 |Coal|1|20|
+
+# Technical
+### ! Notes
+1. スクリプトやそれらに関連する技術的な内容が含まれています。
+2. これらの情報には間違いや個人的な感想が含まれている可能性があります。
+3. 常に公式が出す最新の情報を確認してください。これらの情報は古い可能性があります。
+
+### - はじめに
+ここでは今後のMinePaintであったり、Minecraftの二次創作に関して、私が次に行うことの方針などをまとめています。ここでいうMinecraftとは、**Minecraft bedrock-edition**(統合版)の事でJava-Editionとは違うことを把握してください。ここでは主に、API(旧GameTest-Framework)とOre-ui(React-Facet)について書いています。
+
+### APIの使用
+
+### Ore-uiへの移行
+　恐らく現在でMinecraftを利用するユーザーのインターフェイスを変える場合は、JSON-UIを用いて変更を行うことでしょう。しかしこれらは非常に扱いづらく、また、標準的ではありません。そのため、Mojang Studiosは、新たにOre-uiと呼ばれるReactで構築されたゲームUIを管理するための仕組みを提供しようとしています。Minecraftでは、数年以内にJSON-UIが廃止されOre-uiへ移行し、今後さらにスクリプト要素が増える予定です。そのためMinePaintでは、JSON-UIでの変更は最小限に行われ、Ore-uiがuiの主流になった際に対応が可能なよう調整しています。<br>
+　Ore-uiでは、Reactというui構築のためのJavaScriptライブラリで構築されたUIを管理するためのReact-Facetなどが提供されており、これらのパフォーマンスはゲームに最適でかつスマートで、創作性に優れています。
