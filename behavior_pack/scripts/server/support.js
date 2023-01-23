@@ -47,7 +47,7 @@ mc.world.events.beforeChat.subscribe(eventData => {
 		}
 
 		//* setup
-		else if (/^\\setupData/i.test(message)) {
+		else if (/^\\setUp/i.test(message)) {
 			Array.from(mc.world.getDimension('overworld').getEntities({ type: "minecraft:armor_stand", name: "PlayerData" }))[0].addTag(JSON.stringify({
 				contents: {
 					inTeam: {},
