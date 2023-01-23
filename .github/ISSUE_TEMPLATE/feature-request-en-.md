@@ -3,7 +3,7 @@ name: Feature request(EN)
 about: I would like to see a '_____' feature added.
 title: ''
 labels: 'Feedback: new feature'
-assignees: Apedy
+assignees: ''
 
 ---
 

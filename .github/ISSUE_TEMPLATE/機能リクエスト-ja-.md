@@ -2,8 +2,8 @@
 name: 機能リクエスト(JA)
 about: "○○の機能を追加してほしい。"
 title: ''
-labels: 'Feedback: new feature'
-assignees: Apedy
+labels: 'Problem: bug'
+assignees: ''
 
 ---
 
