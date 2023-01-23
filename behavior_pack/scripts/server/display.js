@@ -207,9 +207,9 @@ export const System = {
  */
 export const Main = {
 	/**
- * メインパネルを開きます。
- * @param {mc.Player} player
- */
+	 * メインパネルを開きます。
+	 * @param {mc.Player} player
+	 */
 	async mainPanel(player) {
 		runCommands(player, `playsound random.pop @s`);
 
