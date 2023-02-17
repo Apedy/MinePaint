@@ -8,7 +8,7 @@ MinePaintのLICENSEは、[***GNU General Public License v3.0***](https://github.
 
 ### ! Notes
 1. MinePaintのマップ及びアドオンは、Minecraft非公式なものであり、これらの制作に *©Mojang Sutudios*社 は関与していません。
-1. そのため、MinePaintに関する全ての事柄を、*©Mojang Sutudios*社 に問い合わせないでください。
+1. そのため、MinePaintに関する全ての事柄を、*Mojang Sutudios*社 に問い合わせないでください。
 
 ### - Info
 * ゲームが正常に動かないと思われる場合は、[***Issues***](https://github.com/Apedy/MinePaint/issues) へ飛び、それに関連するタグをつけて問題を報告してください。
