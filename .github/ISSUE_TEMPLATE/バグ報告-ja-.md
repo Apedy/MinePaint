@@ -2,7 +2,7 @@
 name: バグ報告(JA)
 about: "○○に問題があります。"
 title: ''
-labels: 'Category: script, Problem: bug'
+labels: 'Problem: bug'
 assignees: Apedy
 
 ---
