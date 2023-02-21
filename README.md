@@ -5,13 +5,12 @@
 # - ) LICENSE
 MinePaintは、[***GNU General Public License v3.0***](https://github.com/Apedy/MinePaint/blob/master/LICENSE) の下で公開されています。
 
-
 # ! ) Notes
-1. MinePaintのマップ及びアドオンは、Minecraft非公式なものであり、これらの制作に *Mojang Sutudios*社 は関与していません。
-1. そのため、MinePaintに関する全ての事柄を、*Mojang Sutudios*社 に問い合わせないでください。
+### Mojang Studios
+> 1. MinePaintのマップ及びアドオンは、Minecraft非公式なものであり、これらの制作に *Mojang Sutudios*社 は関与していません。
+> 1. そのため、MinePaintに関する全ての事柄を、*Mojang Sutudios*社 に問い合わせないでください。
 
-### - ) Info
-* ゲームが正常に動かないと思われる場合は [***Issues***](https://github.com/Apedy/MinePaint/issues) でそれに関連するタグをつけて問題を報告してください。
+ゲームが正常に動かないと思われる場合は [***Issues***](https://github.com/Apedy/MinePaint/issues) で問題に関連するタグをつけて報告してください。
 
 # - ) About Games
 ### - 勝利条件
@@ -19,8 +18,8 @@ MinePaintは、[***GNU General Public License v3.0***](https://github.com/Apedy/
 * なお、プレイヤーのキル数やデス数が、勝利条件に直接影響することはありません。
 
 ### - SP(Serori Point)
-* MinePaintでは、ポイントを使って様々なことが出来ます。例えば、KITを購入したり、それを強化、称号を手に入れるなどです。
-* ポイントは試合終了時に配られ、キル数やデス数によって合計ポイントが決定します。
+* MinePaintでは、SPを使って様々なことが出来ます。例えば、KITを購入したり、それを強化、称号を手に入れるなどです。
+* SPは試合終了時に配られ、キル数やデス数によって合計SPが決定します。
 * 試合に勝利した場合は、ボーナスとして合計ポイントに加算がされ、それらすべてを獲得できます。
 * 試合に敗北してしまった場合、ボーナスは無く、また、合計ポイントの50%しか獲得することが出来ません。
 
