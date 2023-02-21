@@ -4,8 +4,8 @@
 * 複数のIssueに分けることが推奨されます。
 
 ### 2. Labelの取り扱いについて
-* CloseLabelに関して、それらを報告者は使用しないでください。
-* TypeLabelに関して、可能な限り範囲を選択し使用してください。
+* CloseLabel: それらを報告者は使用しないでください。
+* TypeLabel: 可能な限り範囲を選択し使用してください。
 
 # Labels
 ### Problem: bug
