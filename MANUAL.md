@@ -5,7 +5,7 @@
 
 ### 2. Labelの取り扱いについて
 * CloseLabel: それらを報告者は使用しないでください。
-* TypeLabel: 可能な限り範囲を選択し使用してください。
+* CategoryLabel: 可能な限り範囲を選択し使用してください。
 
 # Labels
 ### Problem: bug
