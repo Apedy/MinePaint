@@ -43,11 +43,11 @@
 
 ➔ 対処しない理由を書いてクローズ。
 
-### Type: script
+### Category: script
 > スクリプトに関連する場合に使用。
  
-### Type: translation
+### Category: translation
 > 翻訳に関連する場合に使用。
  
-### Type: ui
->  UIに関連する場合に使用。
+### Category: ui
+>  インターフェイスに関連する場合に使用。
