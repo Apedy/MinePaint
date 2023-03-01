@@ -1,6 +1,6 @@
 # MinePaint <a href="https://github.com/Apedy/MinePaint/blob/master/LICENSE"><img src="https://flat.badgen.net/badge/license/GPL-3.0/green"></a> <a href="https://github.com/Apedy/MinePaint/releases/"><img src="https://flat.badgen.net/github/release/Apedy/MinePaint"></a>
 
-![](https://raw.githubusercontent.com/Apedy/MinePaint/master/docs/image/banner_s1.png)
+<a href="https://github.com/Apedy/MinePaint/wiki/MinePaint">![](https://raw.githubusercontent.com/Apedy/MinePaint/master/docs/image/banner_s1.png)</a>
 
 # - ) LICENSE
 MinePaintは、[***GNU General Public License v3.0***](https://github.com/Apedy/MinePaint/blob/master/LICENSE) の下で公開されています。
