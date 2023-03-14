@@ -1,15 +1,38 @@
-import * as mc from '@minecraft/server';
-import * as adm from '../@minepaint/admin';
-import { lang } from '../@minepaint/lang';
-import { uuid } from '../@minepaint/uuid';
+/*!
+ * Copyright (C) 2023 Apedy
+ * This file is part of MinePaint.
+ *
+ * MinePaint is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * MinePaint is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this MinePaint. If not, see <https://www.gnu.org/licenses/>.
+ */
 
-const { runCommands, playerData } = adm;
+import * as mc from '@minecraft/server';
+import { uuid } from '../lib/uuid';
+import { World } from '../lib/minecraft';
+
+import * as admin from '../modules/admin/index';
+import { lang } from '../@minepaint/lang';
+import { config } from './config';
+
+const mcLib = new World("overworld");
+
 
 mc.world.events.beforeChat.subscribe(eventData => {
 	const { sender, message } = eventData;
 
-	if (message.startsWith("\\") && sender.hasTag(adm.config.opTag)) {
-		eventData.cancel = true;
+	eventData.cancel = true;
+
+	if (/^\\\w/i.test(message) && sender.hasTag(config.opTag)) {
 
 		//*kit
 		if (/^\\kit/i.test(message)) {
@@ -18,15 +41,15 @@ mc.world.events.beforeChat.subscribe(eventData => {
 
 			switch (type) {
 				case "add":
-					const prevKits = playerData.find(playerData.queryOptions.haveKits, sender) ? playerData.find(playerData.queryOptions.haveKits, sender) : [];
-					prevKits.push(adm.kitOptions[value]);
+					const prevKits = admin.PlayerStatus.find(sender, admin.PlayerStatus.queryOptions.haveKits) || [];
+					prevKits.push(admin.kitOptions[value]);
 
-					playerData.set(playerData.queryOptions.haveKits, sender, prevKits.filter(e => e));
-					runCommands(sender, `say ${playerData.find(playerData.queryOptions.haveKits, sender).toString()}`);
+					admin.PlayerStatus.set(admin.PlayerStatus.queryOptions.haveKits, sender, prevKits.filter(e => e));
+					mcLib.runCommands(sender, `say ${admin.PlayerStatus.find(sender, admin.PlayerStatus.queryOptions.haveKits).toString()}`);
 					break;
 				case "remove":
-					playerData.set(playerData.queryOptions.haveKits, sender, playerData.find(playerData.queryOptions.haveKits, sender).filter(e => !e.includes(adm.kitOptions[value])));
-					runCommands(sender, `say ${playerData.find(playerData.queryOptions.haveKits, sender).toString()}`);
+					admin.PlayerStatus.set(admin.PlayerStatus.queryOptions.haveKits, sender, admin.PlayerStatus.find(sender, admin.PlayerStatus.queryOptions.haveKits).filter(e => !e.includes(admin.kitOptions[value])));
+					mcLib.runCommands(sender, `say ${admin.PlayerStatus.find(sender, admin.PlayerStatus.queryOptions.haveKits).toString()}`);
 					break;
 			}
 		}
@@ -38,42 +61,31 @@ mc.world.events.beforeChat.subscribe(eventData => {
 
 			switch (type) {
 				case "join":
-					playerData.set(playerData.queryOptions.inTeam, sender, {red: "red", blue: "blue"}[value]);
+					admin.PlayerStatus.set(admin.PlayerStatus.queryOptions.inTeam, sender, {red: "red", blue: "blue"}[value]);
 					break;
 				case "leave":
-					playerData.set(playerData.queryOptions.inTeam, sender, null);
+					admin.PlayerStatus.set(admin.PlayerStatus.queryOptions.inTeam, sender, null);
 					break;
 			}
 		}
 
 		//* setup
 		else if (/^\\setUp/i.test(message)) {
-			Array.from(mc.world.getDimension('overworld').getEntities({ type: "minecraft:armor_stand", name: "PlayerData" }))[0].addTag(JSON.stringify({
-				contents: {
-					inTeam: {},
-					selectKit: {},
-					haveKits: {},
-					lastLogin: {}
-				}
-			}));
-			Array.from(mc.world.getDimension('overworld').getEntities({ type: "minecraft:armor_stand", name: "ReportData" }))[0].addTag(JSON.stringify({
-				contents: {}
-			}));
-			Array.from(mc.world.getDimension('overworld').getEntities({ type: "minecraft:armor_stand", name: "OreData" }))[0].addTag(JSON.stringify({
-				contents: {}
-			}));
-			runCommands(sender, `say ${playerData.get().toString()}`);
+			Array.from(mc.world.getDimension('overworld').getEntities({ type: "minecraft:armor_stand", name: "PlayerStatus" }))[0].addTag(JSON.stringify(admin.PlayerStatus.contents));
+			Array.from(mc.world.getDimension('overworld').getEntities({ type: "minecraft:armor_stand", name: "WorldReport" }))[0].addTag(JSON.stringify(admin.WorldReport.contents));
+			Array.from(mc.world.getDimension('overworld').getEntities({ type: "minecraft:armor_stand", name: "OreState" }))[0].addTag(JSON.stringify(admin.OreState.contents));
+			mcLib.runCommands(sender, `say ${admin.PlayerStatus.get().toString()}`);
 		}
-		else if (/\\getNum/i.test(message)) runCommands(sender, `say Build Number: §e${adm.config.buildNumber}`);
-		else if (/\\getUUID/i.test(message)) runCommands(sender, `say ${new uuid().v4()}`);
-		else runCommands(sender, `tellraw @s {"rawtext": [{"translate": "${lang.system.message.command.unknown}"}, {"text": "\\${message}\n"}, {"translate": "${lang.system.message.command.exist}"}]}`);
+		else if (/\\getNum/i.test(message)) mcLib.runCommands(sender, `say Build Number: §e${config.buildNumber}`);
+		else if (/\\getUUID/i.test(message)) mcLib.runCommands(sender, `say ${uuid.v4()}`);
+		else mcLib.runCommands(sender, `tellraw @s {"rawtext": [{"translate": "${lang.system.message.command.unknown}"}, {"text": "\\${message}\n"}, {"translate": "${lang.system.message.command.exist}"}]}`);
 	}
-	else if (message.startsWith("\\") && !sender.hasTag(adm.config.opTag)) {
-		eventData.cancel = true;
+	else if (/^\\\w/i.test(message) && !sender.hasTag(config.opTag)) {
 		//sender.tell(mc.IRawMessage({"rawtext": [{"translate": "${lang.system.message.command_unknown}"}, {"text": "${message}\n"}, {"translate": "${lang.system.message.command_permission}"}]}));
-		runCommands(sender, `tellraw @s {"rawtext": [{"translate": "${lang.system.message.command.unknown}"}, {"text": "\\${message}\n"}, {"translate": "${lang.system.message.command.permission}"}]}`);
+		mcLib.runCommands(sender, `tellraw @s {"rawtext": [{"translate": "${lang.system.message.command.unknown}"}, {"text": "\\${message}\n"}, {"translate": "${lang.system.message.command.permission}"}]}`);
 	}
-	else return;
+	else if (admin.worldData.system.game) admin.sendTeamChat(sender, message);
+	else if (admin.worldData.system.startUp) admin.sendChat(sender, message);
 });
 
 // mc.world.events.beforeChat.subscribe(eventData => {
