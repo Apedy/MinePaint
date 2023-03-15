@@ -13,7 +13,7 @@ MinePaintは、[***GNU General Public License v3.0***](https://github.com/Apedy/
 ゲームが正常に動かないと思われる場合は [***Issues***](https://github.com/Apedy/MinePaint/issues) で問題に関連するタグをつけて報告してください。
 
 # ? ) WIKI
-### - [MinePaint Wiki](https://serori.memo.wiki/d/MinePaint)
+### []()
 
 # - ) Technical
 ### ! Notes
