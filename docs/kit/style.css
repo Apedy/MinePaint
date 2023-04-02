@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  background-color: #fff;
+}
+h1 {
+	display: inline-block;
+	padding: 15px 20px;
+	font-family: 'Press Start 2P', cursive;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	padding-left: 0px;
+}
+li {
+	list-style: none;
+}
+
+
+.title {
+	text-align: center;
+}
+
+.kitList {
+	text-align: center;
+	font-family: 'Press Start 2P', cursive;
+}
+.kitList_content {
+	display: inline-block;
+}
+.kitList_item {
+	display: inline-block;
+	width: 200px;
+	height: 250px;
+	color: #eee;
+	background: #333;
+	border-radius: 20px;
+	transition: all ease-out 0.3s;
+}
+.kitList_item:hover {
+	background: #222;
+	transform: scale(1.1, 1.1);
+}
+
+.kitPopup_item {
+	display: none;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	background: white;
+}
