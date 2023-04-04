@@ -1,6 +1,16 @@
-function popupSwitch(element) {
-	if (element.style.display === "block") element.style.display = "none"
-	else element.style.display = "block"
+const state = {
+	popup: null,
+}
+
+/**
+ * @param {HTMLElement?} popup
+ */
+function switchPopup(popup = state.popup) {
+	state.popup = popup
+	const getOverlay = () => document.getElementById('popup_overlay');
+
+	popup.style.display === "block" ? popup.style.display = "none" : popup.style.display = "block"
+	getOverlay().style.display === "block" ? getOverlay().style.display = "none" : getOverlay().style.display = "block"
 }
 
 const Warrior = {
@@ -8,7 +18,7 @@ const Warrior = {
 	popup: document.getElementById('Warrior.popup'),
 	click() {
 		console.log("Warrior!")
-		popupSwitch(Warrior.popup)
+		switchPopup(Warrior.popup)
 	}
 }
 const Archer = {
@@ -16,7 +26,7 @@ const Archer = {
 	popup: document.getElementById('Archer.popup'),
 	click() {
 		console.log("Archer!")
-		popupSwitch(Archer.popup)
+		switchPopup(Archer.popup)
 	}
 }
 const Berserker = {
@@ -24,10 +34,11 @@ const Berserker = {
 	popup: document.getElementById('Berserker.popup'),
 	click() {
 		console.log("Berserker!")
-		popupSwitch(Berserker.popup)
+		switchPopup(Berserker.popup)
 	}
 }
 
 Warrior.item.addEventListener('click', Warrior.click);
 Archer.item.addEventListener('click', Archer.click);
 Berserker.item.addEventListener('click', Berserker.click);
+document.getElementById('popup_X').addEventListener('click', () => switchPopup())
