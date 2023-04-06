@@ -1,0 +1,97 @@
+<nav id="min520">
+	<img src="http://192.168.1.11:5500/docs/images/banner.png" style="transition: all ease-in 0.8s;" class="nav_icon">
+
+	<ul class="navList">
+		<li class="nav_item">
+			<a href="#">TOP</a>
+		</li>
+		<li class="nav_item">
+			<a href="#">KIT</a>
+		</li>
+	</ul>
+</nav>
+
+<nav id="max520">
+	<img src="http://192.168.1.11:5500/docs/images/banner.png" style="transition: all ease-in 0.8s;" class="nav_icon">
+
+	<div class="navMenu">
+		<label for="navMenu_icon">
+			<div></div>
+			<div></div>
+			<div></div>
+		</label>
+		<input type="checkbox" id="navMenu_icon" />
+	</div>
+</nav>
+
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+	.nav_icon:hover {
+		transform: rotateX(90deg);
+  	transform-origin: bottom;
+	}
+
+	@media screen and ( min-device-width:520px ) {
+		#max520 {
+			display: none;
+		}
+		#min520 {
+			display: flex;
+			width: 100%;
+			height: 100px;
+			background-color: #333;
+		}
+		.navList {
+			display: flex;
+			margin: 20px 0 20px auto;
+			border-bottom: solid 3px #eee;
+		}
+		.nav_item {
+			padding: 16px 16px;
+			margin: 4px 0 0;
+			font-family: 'Press Start 2P', cursive;
+		}
+		.nav_item a {
+			display: inline-block;
+			color: #eee;
+			font-size: 20px;
+			font-weight: bold;
+			transition: all ease-out 0.3s;
+		}
+		.nav_item a:hover {
+			transform: scale(1.2, 1.2);
+		}
+	}
+
+	@media screen and ( max-device-width:520px ) {
+		input {
+			display: none;
+		}
+		#min520 {
+			display: none;
+		}
+		#max520 {
+			display: flex;
+			width: 100%;
+			height: 100px;
+			background-color: #333;
+		}
+		.navMenu {
+			position: fixed;
+			margin: 20px 0 20px auto;
+			color: #eee;
+			font-size: 20px;
+			
+		}
+		.navMenu div:nth-of-type(1) {
+			top: 4px;
+		}
+		.navMenu div:nth-of-type(2) {
+			top: 8px;
+		}
+		.navMenu div:nth-of-type(3) {
+			top: 12px;
+		}
+	}
+</style>
