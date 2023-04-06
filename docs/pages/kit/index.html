@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=0.6">
+
+	<title>MinePaint | KIT</title>
+
+	<link rel="stylesheet" href="style.css"/>
+
+	<script src="../../lib/jquery-3.6.4.min.js"></script>
+	<script>
+		$(function() {
+			$("#header").load("../../header.html");
+			$("#footer").load("../../footer.html");
+		});
+	</script>
+</head>
+<body>
+	<header id="header" media="screen (max-width:960px)"></header>
+
+	<main>
+		<h1>KIT</h1>
+
+	
+		<ul class="kitList">
+			<li class="kitList_content">
+				<a href="#" id="Warrior.item" class="kitList_item">
+					<img src="images/Warrior.png" class="ul">
+					<p>Warrior</p>
+				</a>
+			</li>
+		
+			<li class="kitList_content">
+				<a href="#" id="Archer.item" class="kitList_item">
+					<img src="https://placehold.jp/160x160.png" class="ul">
+					<p>Archer</p>
+				</a>
+			</li>
+		
+			<li class="kitList_content">
+				<a href="#" id="Berserker.item" class="kitList_item">
+					<img src="https://placehold.jp/160x160.png" class="ul">
+					<p>Berserker</p>
+				</a>
+			</li>
+
+			<li class="kitList_content">
+				<a href="#" id="Attractor.item" class="kitList_item">
+					<img src="images/Attractor.png" class="ul">
+					<p>Attractor</p>
+				</a>
+			</li>
+
+			<li class="kitList_content">
+				<a href="#" id="Assassin.item" class="kitList_item">
+					<img src="images/Assassin.png" class="ul">
+					<p>Assassin</p>
+				</a>
+			</li>
+		</ul>
+
+
+		<ul>
+			<li id="Warrior.popup" class="popup">
+				<h2 class="title">Warrior</h2>
+				<p class="popup_info">君はThe Swordだ。剣の扱いに長けた戦士で、敵を切り刻む。</p>
+
+				<div class="popup_ability">
+					<h2>PASSIVE:</h2>
+
+					<h4>Warrior Footprints</h4>
+					<p>- 歩いたところを自身の色で染める。</p>
+					<p>- しゃがむことで相手の色も塗りつぶす。</p>
+				</div>
+
+				<div class="popup_ability">
+					<h2>SKILL:</h2>
+				</div>
+			</li>
+
+			<li id="Archer.popup" class="popup">
+				<h2 class="title">Archer</h2>
+				<p class="popup_info">君はThe Arrowだ。遠距離攻撃の達人で、敵の頭を射抜く。</p>
+
+				<div class="popup_ability">
+					<h2>PASSIVE:</h2>
+
+					<h4>Arrow Marks</h4>
+					<p>- 矢が刺さった地点を必ず自身の色にそめる。</p>
+				</div>
+
+				<div class="popup_ability">
+					<h2>SKILL:</h2>
+				</div>
+			</li>
+
+			<li id="Berserker.popup" class="popup">
+				<h2 class="title">Berserker</h2>
+				<p class="popup_info">君はThe Houndだ。狂ったように戦う事しか頭に無い。</p>
+
+				<div class="popup_ability">
+					<h2>PASSIVE:</h2>
+
+					<h4>Berserker Footprints</h4>
+					<p>- 歩いたところを自身の色で染める。</p>
+					<p>- しゃがむことで相手の色も塗りつぶす。</p>
+					<br>
+
+					<h4>Excited State</h4>
+					<p>- キル数に応じて、攻撃力が増加する。</p>
+					<p>- デス数に応じて、攻撃力が減少する。</p>
+				</div>
+
+				<div class="popup_ability">
+					<h2>SKILL:</h2>
+
+					<h4>Heavy Blow</h4>
+				</div>
+			</li>
+
+			<li id="Attractor.popup" class="popup">
+				<h2 class="title">Attractor</h2>
+				<p class="popup_info">君はThe Agentだ。敵も味方も束縛し、思うがままに引き寄せる。</p>
+
+				<div class="popup_ability">
+					<h2>PASSIVE:</h2>
+				</div>
+
+				<div class="popup_ability">
+					<h2>SKILL:</h2>
+
+					<h4>Bind Hook(CT:10s)</h4>
+					<p>- 視点の先にいる敵を自身の方向へ引き寄せる。</p>
+					<p>- 視点の先に自身を引き寄せる。</p>
+				</div>
+			</li>
+
+			<li id="Assassin.popup" class="popup">
+				<h2 class="title">Assassin</h2>
+				<p class="popup_info">君はThe Kllerだ。暗殺者らしく忍び寄り、敵の心臓を貫く。</p>
+
+				<div class="popup_ability">
+					<h2>PASSIVE:</h2>
+				</div>
+
+				<div class="popup_ability">
+					<h2>SKILL:</h2>
+
+					<h4>Assassination Time(CT:30s)</h4>
+					<p>- 誰もがあなたを視認することは出来ない。</p>
+					<p>- 体は軽くなり、颯爽と駆けることが出来る。</p>
+				</div>
+			</li>
+		</ul>
+
+		<div id="popup_overlay"><a href="#" id="popup_X">×</a></div>
+	</main>
+
+	<footer></footer>
+
+	<script src="script.js" async></script>
+</body>
+</html>
