@@ -1,6 +1,6 @@
 collections:
-	pages:
-		output: false
-	MinePaint:
-		output: true
-		permalink: /MinePaint/:name.html
+  pages:
+    output: false
+  MinePaint:
+    output: true
+    permalink: /MinePaint/:name.html
