@@ -1,6 +1,1 @@
-collections:
-  pages:
-    output: false
-  MinePaint:
-    output: true
-    permalink: /MinePaint/:name.html
+baseurl: /MinePaint
