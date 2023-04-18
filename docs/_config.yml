@@ -1,0 +1,4 @@
+collections:
+  MinePaint:
+    output: true
+    permalink: /:name
