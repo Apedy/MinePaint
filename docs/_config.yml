@@ -1,4 +1,3 @@
-collections:
-  MinePaint:
-    output: true
-    permalink: /:name/
+permalink: /:title/
+redirect_from:
+  - /pages/:title/
