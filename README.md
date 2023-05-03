@@ -5,8 +5,8 @@
 # - ) LICENSE
 MinePaintは、以下のライセンスのもと、公開されています。
 
-[***GNU General Public License v3.0***](https://github.com/Apedy/MinePaint/blob/master/LICENSE)<br>
-[***MIT License***](https://opensource.org/license/mit/)<br>
+* [***GNU General Public License v3.0***](https://github.com/Apedy/MinePaint/blob/master/LICENSE)<br>
+* [***MIT License***](https://opensource.org/license/mit/)<br>
 
 # ! ) NOTES
 ### Mojang Studios
