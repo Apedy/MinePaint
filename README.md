@@ -3,9 +3,12 @@
 <a href="https://github.com/Apedy/MinePaint">![](https://raw.githubusercontent.com/Apedy/MinePaint/master/docs/images/banner.png)</a>
 
 # - ) LICENSE
-MinePaintは、[***GNU General Public License v3.0***](https://github.com/Apedy/MinePaint/blob/master/LICENSE) の下で公開されています。
+MinePaintは、以下のライセンスのもと、公開されています。
 
-# ! ) Notes
+[***GNU General Public License v3.0***](https://github.com/Apedy/MinePaint/blob/master/LICENSE)<br>
+[***MIT License***](https://opensource.org/license/mit/)<br>
+
+# ! ) NOTES
 ### Mojang Studios
 > 1. MinePaint は、Minecraft非公式なものであり、これらの制作に *Mojang Sutudios*社 は関与していません。
 > 1. MinePaint に関する全ての事柄を、*Mojang Sutudios*社 に問い合わせないでください。
@@ -13,8 +16,9 @@ MinePaintは、[***GNU General Public License v3.0***](https://github.com/Apedy/
 ゲームが正常に動かないと思われる場合は [***Issues***](https://github.com/Apedy/MinePaint/issues) で問題に関連するタグをつけて報告してください。
 
 # ? ) WIKI
-### []()
+### [MinePaint(GitHub-pages)](https://apedy.github.io/MinePaint/)
 
+<!--
 # - ) Technical
 ### ! Notes
 1. スクリプトやそれらに関連する技術的な内容が含まれています。
@@ -32,3 +36,4 @@ MinePaintは、[***GNU General Public License v3.0***](https://github.com/Apedy/
 ### - Ore-ui
 　恐らく現在では、Minecraftを利用するユーザーのインターフェイスを変える場合、`JSON-UI`を用いて変更を行っていることでしょう。しかしこれらは非常に扱いづらく、また、標準的ではありません。そのため、**Mojang**は、新たに`Ore-ui`と呼ばれる`React`で構築されたゲームUIを管理するための仕組みを提供しようとしています。Minecraftでは、数年以内に`JSON-UI`が廃止され`Ore-ui`へ移行し、今後さらにスクリプト要素が増える予定です。そのため**MinePaint**では、`JSON-UI`での変更は最小限に行われ、`Ore-ui`がuiの主流になった際に対応が可能なよう調整しています。<br>
 　Ore-uiでは、ReactというJavaScriptライブラリで構築されたUIを管理するためのReact-Facetなどが提供される予定で、これらのパフォーマンスはゲームに最適でかつスマートで、創作性に優れています。
+-->
