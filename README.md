@@ -3,15 +3,15 @@
 <a href="https://github.com/Apedy/MinePaint">![](https://raw.githubusercontent.com/Apedy/MinePaint/master/docs/images/banner.png)</a>
 
 # - ) LICENSE
-MinePaintは、以下のライセンスのもと、公開されています。
+**MinePaintは、以下のライセンスのもとに公開されています。**
 
-* [***GNU General Public License v3.0***](https://github.com/Apedy/MinePaint/blob/master/LICENSE)<br>
-* [***MIT License***](https://opensource.org/license/mit/)<br>
+* [GNU General Public License v3.0](https://github.com/Apedy/MinePaint/blob/master/LICENSE)<br>
+* [MIT License](https://opensource.org/license/mit/)<br>
 
 # ! ) NOTES
 ### Mojang Studios
-> 1. MinePaint は、Minecraft非公式なものであり、これらの制作に *Mojang Sutudios*社 は関与していません。
-> 1. MinePaint に関する全ての事柄を、*Mojang Sutudios*社 に問い合わせないでください。
+> 1. WorldEdit++ は、Minecraft非公式なものであり、これらの制作に Mojang AB は関与していません。
+> 1. WorldEdit++ に関する全ての事柄を、Mojang AB に問い合わせないでください。
 
 ゲームが正常に動かないと思われる場合は [***Issues***](https://github.com/Apedy/MinePaint/issues) で問題に関連するタグをつけて報告してください。
 
