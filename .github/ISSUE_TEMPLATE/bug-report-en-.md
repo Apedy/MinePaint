@@ -2,7 +2,7 @@
 name: Bug report(EN)
 about: There is a problem with the '_____'.
 title: ''
-labels: 'Feedback: new feature, Problem: bug'
+labels: 'Problem: bug'
 assignees: Apedy
 
 ---
